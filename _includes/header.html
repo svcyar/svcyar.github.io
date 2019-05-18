@@ -13,9 +13,10 @@
         </label>
 
         <div class="trigger">
+            {% assign cur_month = page.month %}
             {% for i in (0..site.months.size) %}
                 {% assign month = site.months[i] %}
-                {% if page.month != month.month %}
+                {% if cur_month != month.month %}
                     {% continue %}
                 {% endif %}
                 {% assign prev_i = i | minus: 1 %}
@@ -28,7 +29,13 @@
                     <a class="page-link"></a>
                 {% endif %}
                 <span class="page-link-main">
-                    {% include month.html month=month.month %} {{ month.year }}
+                    {% if page.is_post %}
+                        <a class="page-link-main" href="{{ prev_month.url | relative_url }}">
+                            {% include month.html month=prev_month.month %} {{ prev_month.year }} 
+                        </a>
+                    {% else %}
+                        {% include month.html month=month.month %} {{ month.year }}
+                    {% endif %}
                 </span>
                 {% assign next_i = i | plus: 1 %}
                 {% if next_i < site.months.size %}

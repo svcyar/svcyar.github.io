@@ -204,23 +204,37 @@
   list-style: none;
 
   > li {
-    margin-bottom: $spacing-unit;
+      overflow: hidden;
+      margin-bottom: $spacing-unit;
   }
 }
 
 .post-meta {
-  float:left;
-  width: 25%;
-  //font-size: $small-font-size;
-  color: $text-color;
-  //margin-top: $spacing-unit/2;
-  @include relative-font-size(1.5);
+    text-align: center;
+    //font-size: $small-font-size;
+    color: $text-color;
+    //margin-top: $spacing-unit/2;
+    @include relative-font-size(1.5);
+}
+
+.preview-post-meta {
+    float: left;
+    width: 25%;
+    display: block;
+    //font-size: $small-font-size;
+    color: $text-color;
+    //margin-top: $spacing-unit/2;
+    @include relative-font-size(1.5);
+}
+
+.preview-post-header {
+    float: left;
+    display: block;
+    text-align: left;
 }
 
 .post-header {
-    float:left;
-    text-align: left;
-    width: 60%;
+    text-align: center;
 }
 
 .post-link {
@@ -233,6 +247,9 @@
 /**
  * Posts
  */
+.post {
+  text-align: center;
+}
 .post-header {
   margin-bottom: $spacing-unit;
 }
@@ -248,7 +265,10 @@
 }
 
 .post-content {
+  display: inline-block;
+  margin: auto;
   margin-bottom: $spacing-unit;
+  text-align: left;
 
   h2 {
     @include relative-font-size(2);

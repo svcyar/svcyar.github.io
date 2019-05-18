@@ -4,7 +4,6 @@ lang: "ru"
 ---
 
 {% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%Y %m'" %}
-
 {% for postYearMonth in postsByYearMonth %}
     {% assign yearMonth = postYearMonth.name | split: " " %}
     {% assign year = yearMonth[0] | to_integer %}
@@ -13,13 +12,16 @@ lang: "ru"
         <ul class="post-list">
         {%- for post in postYearMonth.items -%}
           <li>
-            <div class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</div>
-            <div class="post-header">
+            <div class="preview-post-meta">{{ post.date | date: "%d.%m.%Y" }}</div>
+            <div class="preview-post-header">
+              <a class="preview-post-link" href="{{ post.url | relative_url }}">
+            <h2>
+                  {{ post.title }}
+            </h2>
             <h3>
-              <a class="post-link" href="{{ post.url | relative_url }}">
-                  {{ post.excerpt }}...
-              </a>
+                  {{ post.excerpt }}
             </h3>
+              </a>
             </div>
           </li>
           {%- endfor -%}
