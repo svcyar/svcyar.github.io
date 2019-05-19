@@ -30,7 +30,7 @@
                 {% endif %}
                 <span class="page-link-main">
                     {% if page.is_post %}
-                        <a class="page-link-main" href="{{ prev_month.url | relative_url }}">
+                        <a class="page-link-main" href="{{ month.url | relative_url }}">
                             {% include month.html month=month.month %} {{ month.year }} 
                         </a>
                     {% else %}
