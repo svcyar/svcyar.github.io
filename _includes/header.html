@@ -31,7 +31,7 @@
                 <span class="page-link-main">
                     {% if page.is_post %}
                         <a class="page-link-main" href="{{ prev_month.url | relative_url }}">
-                            {% include month.html month=prev_month.month %} {{ prev_month.year }} 
+                            {% include month.html month=month.month %} {{ month.year }} 
                         </a>
                     {% else %}
                         {% include month.html month=month.month %} {{ month.year }}
