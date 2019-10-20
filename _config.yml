@@ -38,6 +38,8 @@ defaults:
     values:
       excerpt_separator: <!--more-->
       is_post: true
+
+google_analytics: "UA-150425521-1"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
