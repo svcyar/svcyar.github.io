@@ -13,10 +13,9 @@
         </label>
 
         <div class="trigger">
-            {% assign cur_month = page.month %}
             {% for i in (0..site.months.size) %}
                 {% assign month = site.months[i] %}
-                {% if cur_month != month.month %}
+                {% if page.month != month.month or page.year != month.year %}
                     {% continue %}
                 {% endif %}
                 {% assign prev_i = i | minus: 1 %}
